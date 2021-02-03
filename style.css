@@ -1,5 +1,5 @@
 *{
-	padding: 0;
+	padding: 0px;
 	margin: 0;
 	text-decoration: none;
 	list-style: none;
@@ -8,13 +8,15 @@
   body{
 	font-family: montserrat;
 	background-color: #b2b9be;
-	
+
   }
+
   nav{
 	background: #fbfbfb;
 	height: 80px;
 	width: 100%;
-	position: fixed;
+	
+
   }
   label.logo{
 	color: rgb(10, 9, 9);
@@ -25,6 +27,11 @@
 	font-family: 'Great Vibes', cursive;
   }
   nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	top:0;
 	float: right;
 	margin-right: 20px;
 	
@@ -158,11 +165,23 @@ button:active{
 	}
   }
   section{
+	
 	background: url(bg1.jpg) no-repeat;
 	background-size: cover;
 	height: calc(100vh - 80px);
 	position: relative;
+	
   }
+
+  .section-main{
+	background: url(bg1.jpg) no-repeat;
+	background-size: cover;
+	height: calc(100vh - 80px);
+	position: absolute;
+	overflow: auto;
+  }
+
+
   
 
 
