@@ -18,6 +18,18 @@
 	
 
   }
+  .header-white {
+	padding: 30px;
+	text-align: center;
+	color: white;
+	font-size: 50px;
+  }
+  .header-black {
+	
+	text-align: center;
+	color: black;
+	font-size: 50px;
+  }
   label.logo{
 	color: rgb(10, 9, 9);
 	font-size: 30px;
@@ -131,6 +143,7 @@ button:active{
 	}
 	nav ul li a{
 	  font-size: 16px;
+	  
 	}
   }
   
@@ -147,6 +160,7 @@ button:active{
 	  left: -100%;
 	  text-align: center;
 	  transition: all .5s;
+	  list-style-type: circle;
 	}
 	nav ul li{
 	  display: block;
@@ -181,6 +195,104 @@ button:active{
 	overflow: auto;
   }
 
+  .timeline {
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+	color:black;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+	content: '';
+	position: absolute;
+	width: 6px;
+	background-color: white;
+	color:black;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3px;
+  }
+  .container {
+	padding: 10px 40px;
+	position: relative;
+	background-color: inherit;
+	width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .container::after {
+	content: '';
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	right: -17px;
+	background-color: white;
+	border: 4px solid #FF9F55;
+	top: 15px;
+	border-radius: 50%;
+	z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+	left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+	left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+	content: " ";
+	height: 0;
+	position: absolute;
+	top: 22px;
+	width: 0;
+	z-index: 1;
+	right: 30px;
+	border: medium solid white;
+	border-width: 10px 0 10px 10px;
+	border-color: transparent transparent transparent white;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+	content: " ";
+	height: 0;
+	position: absolute;
+	top: 22px;
+	width: 0;
+	z-index: 1;
+	left: 30px;
+	border: medium solid white;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent white transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+	left: -16px;
+  }
+  
+  /* The actual content */
+  .content {
+	padding: 20px 30px;
+	background-color: white;
+	position: relative;
+	border-radius: 6px;
+  }
+
+  ul.a {
+	list-style-type: circle;
+  }
+  
+
+  
+
 
   
 
@@ -190,9 +302,59 @@ button:active{
 
 
 
+  .about-container{
+	
+	background:#ffffff;
+	border-radius:20px;
+	box-shadow:2px 2px 12px rgba(0,0,0,0.2);
+	display: flex;
+	margin: -1%  auto 20px auto;
+	position: relative;
+	justify-content:space-evenly;
+	align-items: center;
+	width: 1000px;
+  height: 500px;
+}
+.about-container img{
+	height:250px;
+}
+.about-text{
+	width:500px;
+} 
+.about-text p:nth-child(1){
+	color:#403e3e;
+	font-family: myriad pro;
+	font-weight:bold;
+	font-size:23px;
+	line-height:0px;
+}
+.about-text p:nth-child(2){
+	color:#3e3d3d;
+	font-size:13px;
+	font-family: myriad pro;
+	font-weight:bold;
+	line-height:5px;
+}
+.about-text p:nth-child(3),.about-text p:nth-child(4){
+	color:#7e7d7d;
+	font-family:calibri;
+	font-size:16px;
+}
+.about-text button{
+	width:120px;
+	height: 40px;
+	color:#ffffff;
+	outline:none;
+	border:none;
+	font-family: calibri;
+	background-color:#262525;
+}
 
 
-  .about-area, .port-area, .service-area, .contact-area{
+
+
+
+  .home-area,.about-area, .education-area, .skill-area, .contact-area{
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -202,6 +364,9 @@ button:active{
     width: 100%;
     height: 700px;
 }
+.home-area{
+	background-color: #262626;
+}
 .text-part{
     width: 65%;
     height: 80%;
@@ -209,11 +374,12 @@ button:active{
 .about-area{
     background-color: #fefefe;
 }
-.port-area{
+.education-area{
     background-color: #262626;
-    color: #fff;
+	color: #fff;
+	height: 850px;
 }
-.service-area{
+.skill-area{
     background-color: #fefefe;
 }
 .contact-area{
